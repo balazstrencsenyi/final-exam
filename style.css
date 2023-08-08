@@ -110,3 +110,14 @@ button {
 .arrow {
   font-size: 18px;
 }
+
+/*add media query between 420px and 720px*/
+
+@media (max-width: 720px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 50px 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
