@@ -43,7 +43,16 @@ function createCard(cardIndex, book) {
   cardContainer.appendChild(card);
 
   const button = document.createElement("button");
-  button.textContent = "Read More";
+
+  const cardButtonText = document.createElement("div");
+  cardButtonText.classList.add("card-button-text");
+  cardButtonText.innerText = "Read More";
+
+  const arrow = document.createElement("i");
+  arrow.classList.add("arrow");
+  arrow.innerText = "→";
+
+  button.append(cardButtonText, arrow);
   cardContainer.appendChild(button);
 
   return cardContainer;
