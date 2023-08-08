@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f8f7f3;
+  --secondary-color: #1a24fb;
+}
+
+#root {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Overpass", sans-serif;
+}
