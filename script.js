@@ -17,12 +17,14 @@ headerButton.textContent = books.button;
 headerContainer.appendChild(headerButton);
 
 function createCard(cardIndex, book) {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("card-container");
+
   const card = document.createElement("div");
   card.classList.add("card");
 
-  // Create a div for the card number
   const cardNumber = document.createElement("div");
-  cardNumber.textContent = cardIndex + 1; // Adding 1 to the index to display 1-based numbering
+  cardNumber.textContent = cardIndex + 1;
   cardNumber.classList.add("card-number");
   card.appendChild(cardNumber);
 
@@ -38,7 +40,13 @@ function createCard(cardIndex, book) {
   text.textContent = book.text;
   card.appendChild(text);
 
-  return card;
+  cardContainer.appendChild(card);
+
+  const button = document.createElement("button");
+  button.textContent = "Read More";
+  cardContainer.appendChild(button);
+
+  return cardContainer;
 }
 
 function populateCards() {
@@ -47,7 +55,7 @@ function populateCards() {
 
   if (books.cards) {
     books.cards.forEach((book, index) => {
-      const card = createCard(index, book); // Pass the index to createCard
+      const card = createCard(index, book);
       cardsContainer.appendChild(card);
     });
   }
